@@ -19,6 +19,7 @@ User.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      Unique: true
     },
     email: {
       type: DataTypes.STRING,

@@ -1,17 +1,40 @@
 [
   {
-    "name": "Music Near Me",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
-    "needed_funding": 5000
+    "name": "lawn care",
+    "description": "please cut my yard",
+    "location": "Austin,tx",
+    "pay": "$20 an hour",
+    "contact_name": "John Smith",
+    "contact_email": "johnsmith@gmail.com"
   },
   {
-    "name": "The Ultimate Tech Quiz",
-    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
-    "needed_funding": 10000
+    "name": "Dog Sitter",
+    "description": "need someone to watch my dogs on the weekend",
+    "location": "Austin,tx",
+    "pay": "$15 an hour",
+    "contact_name": "Tod Johnson",
+    "contact_email": "todJ@gmail.com"
   },
   {
-    "name": "Roll 'Em Up",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-    "needed_funding": 800
+    "name": "car detailing",
+    "description": "looking for experienced car detailer for weekend shifts",
+    "location": "Austin,tx",
+    "pay": "$25 an hour",
+    "contact_name": "Mike Martin",
+    "contact_email": "M&M@yahoo.com"
+  },{
+    "name": "Cashier",
+    "description": "looking for a cashier for weekday morning shifts at a local grocery store",
+    "location": "Austin,tx",
+    "pay": "$14 an hour",
+    "contact_name": "Margarete Rodgers",
+    "contact_email": "MRGrocer@yahoo.com"
+  },{
+    "name": "Pizza Deliver",
+    "description": "Must have a clean driving record and own vehicle with insurance, wage plus tips",
+    "location": "Austin,tx",
+    "pay": "up to $20 an hour",
+    "contact_name": "Joshua Treehorn",
+    "contact_email": "pizzaTower@yahoo.com"
   }
 ]
