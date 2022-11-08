@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
 const { Posting, User} = require('../models');
 const router = require('express').Router();
-const withAuth = require('../../utils/withAuth');
+const withAuth = require('../utils/withAuth');
 //login route checks if the user is logged in and if so sends him to the homepage if not renders the login handlebars page 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
@@ -50,7 +50,7 @@ router.get('/create',withAuth, async (req,res)=>{
 
 router.get('/signup', async (req,res)=>{
   try{
-    res.render('/signup');
+    res.render('signup');
   }catch (err) {
     res.status(500).json(err);
   }
