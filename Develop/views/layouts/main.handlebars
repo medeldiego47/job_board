@@ -5,26 +5,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../public/css/style.css"> 
   <title>Job-board</title>
 </head>
 
-<body>
-  <div class="flex-column justify-space-around">
-    <header class=" primary display-flex justify-space-between align-center p-2">
-      <h1 class="text-center">
-        <a href="/" >Job Board</a>
+<body style="background:#696F8C">
+  <div class="justify-space-around">
+    <header class=" primary display-flex justify-space-between align-center p-2 jumbotron" style="background: #F6E7DA">
+      
+      <h1 class="text-center " >
+        Grab-A-Job
       </h1>
-      <nav>
-        <!-- Conditionally -->
-        {{#if logged_in}}
-        <a href="/">post</a> |
-        <button class="no-button" id="logout">logout</button>
+       <nav class="navbar  ">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li><a href="/create">Create-A-Job</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      {{#if logged_in}}
+            <li><a href="/logout"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
         {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
+      <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      {{/if}}
+    </ul>
+  </div>
+</nav>
     </header>
-    <main class="container container-fluid mt-5">
+    
+    <main class="container container-fluid mt-5" >
       <!-- Render -->
       {{{ body }}}
     </main>

@@ -1,0 +1,31 @@
+{{#if posts.length}}
+<section>
+    <h2 class="text-center">job listings</h2>
+    {{#each posts as |post|}}
+    
+<div class="container">
+	<div class="card mx-auto">
+			<div class="card-title">
+				<p class="heading text-center"> {{post.name}}</p>
+			</div>
+			
+			<p class="text-muted text-center">{{post.description}}</p>
+			<div class="row btnrow my-4">
+				<div class="col-4 col-md-3"><button type="button" class="btn btn-outline-success btn-sm" style="background: #00ff002b;">Location:{{post.location}}</button></div>
+				<div class="col-4 col-md-3"><button type="button" class="btn btn-outline-primary btn-sm" style="background: #007bff33;">Pay:{{post.pay}}</button></div>
+				<div class="col-4 col-md-3"><button type="button" class="btn btn-outline-danger btn-sm" style="background: #dc35452e;">Contact Name:{{post.contact_name}}</button></div>
+                <div class="col-4 col-md-3"><button type="button" class="btn btn-outline-danger btn-sm" style="background: #dc35452e;">Contact Email:{{post.contact_email}}</button></div>
+            </div>
+
+			<div class="posted"><span>Posted on: {{post.date_created}}</span></div>
+		
+	</div>
+</div>
+<br>
+
+    {{/each}}
+
+</section>
+{{/if}}
+
+<button type="submit" class="btn"><a class="link" href="/create">New Post</a></button>

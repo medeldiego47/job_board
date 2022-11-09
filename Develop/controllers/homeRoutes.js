@@ -13,7 +13,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/',withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const postData = await Posting.findAll({
@@ -53,6 +53,17 @@ router.get('/signup', async (req,res)=>{
     res.render('signup');
   }catch (err) {
     res.status(500).json(err);
+  }
+});
+
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    }) 
+    res.render('login');
+  } else {
+    res.status(404).end();
   }
 });
   module.exports = router;
