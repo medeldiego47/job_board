@@ -1,6 +1,5 @@
 async function signupFormHandler(event) {
     event.preventDefault();
-  console.log('test')
     const name = document.querySelector('#username-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
@@ -15,7 +14,6 @@ async function signupFormHandler(event) {
         }),
         headers: { 'Content-Type': 'application/json' },
       });
-      console.log('test2')
       if (response.ok) {
         document.location.replace('/');
       } else {

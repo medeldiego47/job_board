@@ -66,4 +66,12 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+router.get('/contact',withAuth, async (req,res)=>{
+  try{
+    res.render('contact');
+  }catch (err) {
+    res.status(500).json(err);
+  }
+});
   module.exports = router;
