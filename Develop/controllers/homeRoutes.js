@@ -22,7 +22,9 @@ router.get('/', withAuth, async (req, res) => {
           model: User,
           attributes: ['name'],
         },
-      ],
+      ],order: [
+        ['date_created', 'ASC'],
+    ],
     });
 
     // Serialize data so the template can read it
