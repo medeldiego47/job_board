@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Posting} = require('../../models');
 const withAuth = require('../../utils/withAuth');
 //route to sign up for a account requiring email, name and password
-router.post('/signup',withAuth,  async (req, res) => {
+router.post('/signup',  async (req, res) => {
   try {
     const userData = await User.create(req.body);
 
