@@ -3,6 +3,8 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
+const nodeMailer = require('nodemailer');
+const bodyParser = require('body-parser');
 
 
 const sequelize = require('./config/connection');
@@ -30,6 +32,50 @@ const hbs = exphbs.create();
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
+
+app.post('/send', (req, res) => {
+  const output = `
+  <p> you have a new contact request</p>
+  <h3> Contact Details </h3>
+  <ul>
+      <li>name: ${req.body.name}<li>  
+      <li>name: ${req.body.email}<li> 
+  </ul> 
+  <h3>Message</h3>
+  <p>${req.body.message}</p>
+      `
+
+  const transporter = nodeMailer.createTransport({
+    host: "smtp.office365.com",
+    port: 587,
+    secure: false, 
+    auth: {
+      user: 'jobsearchhelper123@outlook.com', 
+      pass: 'Coding123', 
+    },
+    tls:{
+        rejectUnauthorized:false
+    }
+  });
+
+  let info = {
+    from: '"Christian Q" <jobsearchhelper123@outlook.com>', 
+    to: "chrisld50@yahoo.com", 
+    subject: "My first NodeMailer Request", 
+    text: "Hello world?", 
+    html: output , 
+  }
+
+  transporter.sendMail(info, (error, info) => {
+      if (error) {
+          return console.log(error);
+      }
+      console.log('message send: %s')
+  })
+  console.log("Message sent: %s", info.messageId);
+  console.log("Preview URL: %s", nodeMailer.getTestMessageUrl(info));
+})
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
