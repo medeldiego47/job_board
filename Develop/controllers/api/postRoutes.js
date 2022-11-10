@@ -20,12 +20,14 @@ router.get('/', withAuth ,async (req, res) => {
 //create route to create a new post
   router.post('/', withAuth, async (req, res) => {
     try {
+      console.log('test')
       const newPost = await Posting.create({
+        
         ...req.body,
         user_id: req.session.user_id,
       });
   
-      res.status(200).json(newProject);
+      res.status(200).json(newPost);
     } catch (err) {
       res.status(400).json(err);
     }
