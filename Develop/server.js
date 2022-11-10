@@ -33,17 +33,19 @@ const hbs = exphbs.create();
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json())
+
 
 app.post('/send', (req, res) => {
   const output = `
-  <p> you have a new contact request</p>
-  <h3> Contact Details </h3>
-  <ul>
-      <li>name: ${req.body.name}<li>  
-      <li>name: ${req.body.email}<li> 
-  </ul> 
+  <p> Hello! We have recieved your request! below is the start of your message:</p>
+
   <h3>Message</h3>
   <p>${req.body.message}</p>
+  
+  <p> You will have a response from us in the next hour, thank you for contacting support!</p>
+  <p> Thank you, The Grab-A-Job Team </p>
       `
 
   const transporter = nodeMailer.createTransport({
@@ -71,9 +73,9 @@ app.post('/send', (req, res) => {
       if (error) {
           return console.log(error);
       }
-      console.log('message send: %s')
+      console.log('message sent')
   })
-  console.log("Message sent: %s", info.messageId);
+  console.log("Message sent", info.messageId);
   console.log("Preview URL: %s", nodeMailer.getTestMessageUrl(info));
 })
 
