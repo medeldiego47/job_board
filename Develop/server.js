@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 
 const sequelize = require('./config/connection');
 const { env } = require('process');
+const { response } = require('express');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
@@ -39,12 +40,12 @@ app.use(bodyParser.json())
 
 app.post('/send', (req, res) => {
   const output = `
-  <p> Hello! We have recieved your request! below is the start of your message:</p>
+  <p> Hello! We have recieved your request! below is the start of our conversation:</p>
 
   <h3>Message</h3>
   <p>${req.body.message}</p>
   
-  <p> You will have a response from us in the next hour, thank you for contacting support!</p>
+  <p> You will have a response from us in the next hour</p>
   <p> Thank you, The Grab-A-Job Team </p>
       `
 
@@ -64,7 +65,7 @@ app.post('/send', (req, res) => {
   let info = {
     from: '"Grab-a-job Team" <jobsearchhelper123@outlook.com>', 
     to: `${req.body.email}`, 
-    subject: "My first NodeMailer Request", 
+    subject: "Grab-a-job Support", 
     text: "Hello world?", 
     html: output , 
   }
@@ -76,6 +77,7 @@ app.post('/send', (req, res) => {
       console.log('message sent')
   })
   console.log("Message sent", info.messageId);
+  res.redirect('/contact');
   console.log("Preview URL: %s", nodeMailer.getTestMessageUrl(info));
 })
 
