@@ -11,24 +11,13 @@ Usage
 
 Live on Heroku
 
+https://grabajob.herokuapp.com/login
+
 Job Board 
 
 Installation
+
 npm install
-Dependencies:
-
-bcrypt npm i bcrypt
-connect session npm i connect-session-sequelize
-dotenv npm i dotenv
-express npm i express
-handlebars npm i express-handlebars
-session npm i express-session
-leaflet npm i leaflet
-mysql2 npm i mysql2
-normalize npm i normalize.css
-sequelize npm i sequelize
-
-DevDependencies:
 
 
 Credits
