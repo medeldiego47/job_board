@@ -62,8 +62,8 @@ app.post('/send', (req, res) => {
   });
 
   let info = {
-    from: '"Christian Q" <jobsearchhelper123@outlook.com>', 
-    to: "chrisld50@yahoo.com", 
+    from: '"Grab-a-job Team" <jobsearchhelper123@outlook.com>', 
+    to: `${req.body.email}`, 
     subject: "My first NodeMailer Request", 
     text: "Hello world?", 
     html: output , 
