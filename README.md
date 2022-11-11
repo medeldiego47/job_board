@@ -17,7 +17,8 @@ Job Board
 
 Installation
 
-npm install
+npm install![Screenshot 2022-11-10 at 8 49 39 PM](https://user-images.githubusercontent.com/109247874/201252747-78b9db44-ee3a-42aa-b361-eb83a706053f.png)
+
 
 
 Credits
