@@ -1,37 +1,43 @@
-<div class="fcf-body col-md-6 offset-md-5">
+<div class="mx-auto fcf-body col-md-6 offset-md-5">
 
-    
-    <div id="fcf-form">
-    <h3 class="fcf-h3">Contact us</h3>
-
-        {{msg}}
-    <form id="fcf-form-id" class="fcf-form-class" method="post" action="send">
+    <div class="col d-flex justify-content-center">
+       <div class="card">
+        <div class="card-header">
+            <div id="fcf-form">
+            <h3 class="fcf-h3">Contact us</h3>
+        </div>
+      <div class="card-body">
+            {{msg}}
+         <form id="fcf-form-id" class="fcf-form-class" method="post" action="send">
         
-        <div class="fcf-form-group">
-            <label for="Name" class="fcf-label">Your name</label>
-            <div class="fcf-input-group">
-                <input type="text" id="Name" name="name" class="fcf-form-control" required>
+            <div class="fcf-form-group">
+                <label for="Name" class="fcf-label">Your name</label>
+                <div class="fcf-input-group">
+                    <input type="text" id="Name" name="name" class="fcf-form-control" required>
+                </div>
             </div>
-        </div>
 
-        <div class="fcf-form-group">
-            <label for="Email" class="fcf-label">Your email address</label>
-            <div class="fcf-input-group">
-                <input type="email" id="Email" name="email" class="fcf-form-control" required>
+            <div class="fcf-form-group">
+                <label for="Email" class="fcf-label">Your email address</label>
+                <div class="fcf-input-group">
+                    <input type="email" id="Email" name="email" class="fcf-form-control" required>
+                </div>
             </div>
-        </div>
 
-        <div class="fcf-form-group">
-            <label for="Message" class="fcf-label">Your message</label>
-            <div class="fcf-input-group">
-                <textarea id="Message" name="message" class="fcf-form-control" rows="6" maxlength="3000" required="" style="height: 42px; width: 276px;"></textarea>
+            <div class="fcf-form-group">
+                <label for="Message" class="fcf-label">Your message</label>
+                <div class="fcf-input-group">
+                    <textarea id="Message" name="message" class="fcf-form-control" rows="6" maxlength="3000" required="" style="height: 42px; width: 276px;"></textarea>
+                </div>
             </div>
-        </div>
 
-        <div class="fcf-form-group">
-            <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+            <div class="fcf-form-group">
+                <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+            </div>
+          </form>
+         </div>
         </div>
-    </form>
+      </div>
     </div>
 </div>
 <script src="/server.js"></script>
