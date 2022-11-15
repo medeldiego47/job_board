@@ -1,27 +1,43 @@
-Job Board Search 
+# Grab A Job 
 
-Description
+# Description
+
+Grab-A-Job is a simple and free job search platform that allows employers to post openings in the community. 
 
 
-User Story
-AS A user
-I WANT 
-SO THAT 
-Usage
+# User Story
+
+As a user I want to search for job openings within the community and as an Employer I want to post job openings. 
+
+
+AS A Person 
+
+I WANT to search for jobs within the community
+
+SO THAT I may be employed 
+
+# Usage
+
 
 Live on Heroku
 
 https://grabajob.herokuapp.com/login
 
-Job Board 
 
-Installation
+![Screenshot 2022-11-10 at 8 49 39 PM](https://user-images.githubusercontent.com/109247874/201252747-78b9db44-ee3a-42aa-b361-eb83a706053f.png)
 
-npm install![Screenshot 2022-11-10 at 8 49 39 PM](https://user-images.githubusercontent.com/109247874/201252747-78b9db44-ee3a-42aa-b361-eb83a706053f.png)
+# Technologies 
+* Bootstrap 
+* Node Js
+* Node Mailer 
+* Express 
+* Handlebars 
+* Sequelize
+* My SQL 
+* Bcryt 
+* Body-Parser 
 
-
-
-Credits
+# Credits
 
 • Christian QuarlesGithub: https://github.com/Chrisld50
 
